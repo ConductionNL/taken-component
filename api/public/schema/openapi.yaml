@@ -3629,12 +3629,12 @@ definitions:
         description: 'The moment this request was created'
         type: string
         format: date-time
-        example: '2020-05-04 13:41:35'
+        example: '2020-05-04 14:09:30'
       dateModified:
         description: 'The moment this request last Modified'
         type: string
         format: date-time
-        example: '2020-05-04 13:41:35'
+        example: '2020-05-04 14:09:30'
     required: []
   AuditTrail-write:
     properties:
@@ -3682,12 +3682,12 @@ definitions:
         description: 'The moment this request was created'
         type: string
         format: date-time
-        example: '2020-05-04 13:41:35'
+        example: '2020-05-04 14:09:30'
       dateModified:
         description: 'The moment this request last Modified'
         type: string
         format: date-time
-        example: '2020-05-04 13:41:35'
+        example: '2020-05-04 14:09:30'
     required: []
   ChangeLog-write:
     properties:
@@ -3735,7 +3735,7 @@ definitions:
       completed:
         description: 'The date and time a to-do is completed.'
         type: string
-        example: '2020-05-04 13:41:35'
+        example: '2020-05-04 14:09:30'
         format: date-time
       dateCreated:
         description: 'The moment this resource was created'
@@ -3778,7 +3778,7 @@ definitions:
       completed:
         description: 'The date and time a to-do is completed.'
         type: string
-        example: '2020-05-04 13:41:35'
+        example: '2020-05-04 14:09:30'
         format: date-time
     required:
       - name
