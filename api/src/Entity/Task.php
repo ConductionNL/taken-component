@@ -117,7 +117,7 @@ class Task
     private $priority = 9;
 
     /**
-     * @var int The percentage of a to-do that has been comepleted.
+     * @var int The percentage of a task that has been comepleted.
      * @example 40%
      *
      * @Assert\Type("int")
