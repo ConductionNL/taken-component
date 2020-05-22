@@ -54,7 +54,7 @@ class Task
      *
      * @example call companies
      * @Groups({"read", "write"})
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=false)
      * @Assert\Length(
      *     max = 255
      * )
@@ -82,7 +82,17 @@ class Task
      * @ORM\Column(type="string", nullable=true)
      * @Assert\Url
      */
-    private $owner;
+    private $assignee;
+
+    /**
+     * @var string Topic this task relates to
+     *
+     * @example https://cc.zaakonline.nl/people/e2984465-190a-4562-829e-a8cca81aa35d
+     * @Groups({"read", "write"})
+     * @ORM\Column(type="string", nullable=false)
+     * @Assert\Url
+     */
+    private $topic;
 
     /**
      * @var string The status of this task.
@@ -173,14 +183,26 @@ class Task
         return $this;
     }
 
-    public function getOwner(): ?string
+    public function getAssignee(): ?string
     {
-        return $this->owner;
+        return $this->assignee;
     }
 
-    public function setOwner(string $owner): self
+    public function setAssignee(string $assignee): self
     {
-        $this->owner = $owner;
+        $this->assignee = $assignee;
+
+        return $this;
+    }
+
+    public function getTopic(): ?string
+    {
+        return $this->topic;
+    }
+
+    public function setTopic(string $topic): self
+    {
+        $this->topic = $topic;
 
         return $this;
     }
