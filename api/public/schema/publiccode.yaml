@@ -3,11 +3,11 @@ publiccodeYmlVersion: "0.2"
 name: tc
 applicationSuite: commonground
 url: "https://github.com/ConductionNL/proto-component"
-landingURL: "pc.zaakonline.nl" 
+landingURL: "tc.zaakonline.nl" 
 isBasedOn: "https://github.com/ConductionNL/Proto-component-commonground.git" 
 softwareVersion: "V.0.1"
-releaseDate: "2020-04-05"
-logo: pc.zaakonline.nl 
+releaseDate: "2020-26-05"
+logo: tc.zaakonline.nl 
 monochromeLogo: img/logo-mono.svg
 
 inputTypes:
@@ -67,7 +67,7 @@ description:
 #          is and why one should need it.
 
     documentation: "https://github.com/ConductionNL/proto-component/blob/master/README.md"
-    apiDocumentation: "pc.zaakonline.nl"
+    apiDocumentation: "tc.zaakonline.nl"
 #
 #    features:
 #       - Very important feature
