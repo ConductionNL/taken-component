@@ -9,8 +9,8 @@ info:
     - Enviroment: dev
     - Version: V.0.1
     - Repository: [online](https://github.com/ConductionNL/proto-component) / [zip](https://github.com/ConductionNL/proto-component/archive/master.zip)
-    - Docker Image: [online](https://hub.docker.com/repository/docker/conduction/pc-php) 
-    - Datamodel: [postman](/schema/tc.postman_collection.json) / [oas](/schema/openapi.yaml) / [pdf](/schema/datamodel.pdf) / [mwb](/schema/datamodel.mwb) 
+    - Docker Image: [online](https://hub.docker.com/repository/docker/conduction/tc-php) 
+    - Datamodel: [postman](/schema/tc.postman_collection.json) / [oas](/schema/openapi.yaml) / [pdf](/schema/datamodel.pdf) / [modelio (zip)](/schema/Datamodel_Modelio.zip) 
     
     'Naast deze JSON rest API is er ook een [graphql](/graphql) interface beschikbaar.'         
     
@@ -2038,7 +2038,16 @@ paths:
               - asc
               - desc
         -
-          name: 'order[owner]'
+          name: 'order[assignee]'
+          in: query
+          required: false
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+        -
+          name: 'order[topic]'
           in: query
           required: false
           schema:
@@ -2221,13 +2230,29 @@ paths:
           style: form
           explode: true
         -
-          name: owner
+          name: assignee
           in: query
           required: false
           schema:
             type: string
         -
-          name: 'owner[]'
+          name: 'assignee[]'
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          style: form
+          explode: true
+        -
+          name: topic
+          in: query
+          required: false
+          schema:
+            type: string
+        -
+          name: 'topic[]'
           in: query
           required: false
           schema:
@@ -2969,114 +2994,113 @@ components:
             url: 'http://schema.org/identifier'
           type: string
           format: uuid
+        application:
+          writeOnly: true
+          description: 'The application that made the request'
+          externalDocs:
+            url: 'http://schema.org/url'
+          type: string
+          nullable: true
         request:
-          readOnly: true
           description: 'The id of the request within that application'
           externalDocs:
             url: 'http://schema.org/url'
           type: string
+          nullable: true
         user:
-          readOnly: true
           description: 'The user on behalf of wich the request was made'
           externalDocs:
             url: 'http://schema.org/url'
           type: string
+          nullable: true
         subject:
-          readOnly: true
           description: '???'
           type: string
+          nullable: true
         process:
-          readOnly: true
           description: 'The procces on behalf of wich the request was made'
           type: string
+          nullable: true
         dataElements:
-          readOnly: true
           description: 'The moment this request was created'
           type: array
           items:
             type: string
+          nullable: true
         dataSubjects:
-          readOnly: true
           description: 'The moment this request was created'
           type: array
           items:
             type: string
+          nullable: true
         resource:
-          readOnly: true
           description: 'The resource that was requested'
           type: string
+          nullable: true
         resourceType:
-          readOnly: true
           description: 'The type of the resource that was requested'
           type: string
+          nullable: true
         route:
-          readOnly: true
           description: 'The moment this request was created'
           type: string
         endpoint:
-          readOnly: true
           description: 'The endpoint that the request was made to'
           type: string
         method:
-          readOnly: true
           description: 'The method that was used'
           type: string
         accept:
-          readOnly: true
           description: 'The contentType that was reqousted'
           type: string
         contentType:
-          readOnly: true
           description: 'The contentType that was suplieds'
           type: string
         content:
-          readOnly: true
           description: 'The moment this request was created'
           type: string
+          nullable: true
         ip:
-          readOnly: true
           description: 'The moment this request was created'
           type: string
         session:
-          readOnly: true
           description: 'The moment this request was created'
           type: string
         headers:
-          readOnly: true
           description: 'The headers supplied by client'
           type: array
           items:
             type: string
         statusCode:
-          readOnly: true
           description: 'The status code returned to client'
           type: integer
+          nullable: true
         notFound:
-          readOnly: true
           description: 'Whether or not the reqousted endpoint was found'
           type: boolean
+          nullable: true
         forbidden:
-          readOnly: true
           description: 'Whether or not the client was allowed to the reqousted endpoint'
           type: boolean
+          nullable: true
         ok:
-          readOnly: true
           description: 'Whether or not there where any problems'
           type: boolean
+          nullable: true
         dateCreated:
-          readOnly: true
           description: 'The moment this request was created'
           externalDocs:
             url: 'http://schema.org/DateTime'
           type: string
           format: date-time
+          nullable: true
         dateModified:
-          readOnly: true
           description: 'The moment this request last Modified'
           externalDocs:
             url: 'http://schema.org/DateTime'
           type: string
           format: date-time
+          nullable: true
     AuditTrail-write:
       type: object
       description: 'An resource representing a log line.'
@@ -3100,114 +3124,113 @@ components:
             url: 'http://schema.org/identifier'
           type: string
           format: uuid
+        application:
+          writeOnly: true
+          description: 'The application that made the request'
+          externalDocs:
+            url: 'http://schema.org/url'
+          type: string
+          nullable: true
         request:
-          readOnly: true
           description: 'The id of the request within that application'
           externalDocs:
             url: 'http://schema.org/url'
           type: string
+          nullable: true
         user:
-          readOnly: true
           description: 'The user on behalf of wich the request was made'
           externalDocs:
             url: 'http://schema.org/url'
           type: string
+          nullable: true
         subject:
-          readOnly: true
           description: '???'
           type: string
+          nullable: true
         process:
-          readOnly: true
           description: 'The procces on behalf of wich the request was made'
           type: string
+          nullable: true
         dataElements:
-          readOnly: true
           description: 'The moment this request was created'
           type: array
           items:
             type: string
+          nullable: true
         dataSubjects:
-          readOnly: true
           description: 'The moment this request was created'
           type: array
           items:
             type: string
+          nullable: true
         resource:
-          readOnly: true
           description: 'The resource that was requested'
           type: string
+          nullable: true
         resourceType:
-          readOnly: true
           description: 'The type of the resource that was requested'
           type: string
+          nullable: true
         route:
-          readOnly: true
           description: 'The moment this request was created'
           type: string
         endpoint:
-          readOnly: true
           description: 'The endpoint that the request was made to'
           type: string
         method:
-          readOnly: true
           description: 'The method that was used'
           type: string
         accept:
-          readOnly: true
           description: 'The contentType that was reqousted'
           type: string
         contentType:
-          readOnly: true
           description: 'The contentType that was suplieds'
           type: string
         content:
-          readOnly: true
           description: 'The moment this request was created'
           type: string
+          nullable: true
         ip:
-          readOnly: true
           description: 'The moment this request was created'
           type: string
         session:
-          readOnly: true
           description: 'The moment this request was created'
           type: string
         headers:
-          readOnly: true
           description: 'The headers supplied by client'
           type: array
           items:
             type: string
         statusCode:
-          readOnly: true
           description: 'The status code returned to client'
           type: integer
+          nullable: true
         notFound:
-          readOnly: true
           description: 'Whether or not the reqousted endpoint was found'
           type: boolean
+          nullable: true
         forbidden:
-          readOnly: true
           description: 'Whether or not the client was allowed to the reqousted endpoint'
           type: boolean
+          nullable: true
         ok:
-          readOnly: true
           description: 'Whether or not there where any problems'
           type: boolean
+          nullable: true
         dateCreated:
-          readOnly: true
           description: 'The moment this request was created'
           externalDocs:
             url: 'http://schema.org/DateTime'
           type: string
           format: date-time
+          nullable: true
         dateModified:
-          readOnly: true
           description: 'The moment this request last Modified'
           externalDocs:
             url: 'http://schema.org/DateTime'
           type: string
           format: date-time
+          nullable: true
     'AuditTrail:jsonld-write':
       type: object
       description: 'An resource representing a log line.'
@@ -3233,43 +3256,40 @@ components:
           type: string
           format: uuid
         action:
-          readOnly: true
           type: string
         objectId:
-          readOnly: true
           type: string
+          nullable: true
         objectClass:
-          readOnly: true
           type: string
         version:
-          readOnly: true
           type: integer
         data:
-          readOnly: true
           type: array
           items:
             type: string
+          nullable: true
         username:
-          readOnly: true
           type: string
+          nullable: true
         session:
-          readOnly: true
           description: 'The moment this request was created'
           type: string
+          nullable: true
         dateCreated:
-          readOnly: true
           description: 'The moment this request was created'
           externalDocs:
             url: 'http://schema.org/DateTime'
           type: string
           format: date-time
+          nullable: true
         dateModified:
-          readOnly: true
           description: 'The moment this request last Modified'
           externalDocs:
             url: 'http://schema.org/DateTime'
           type: string
           format: date-time
+          nullable: true
     ChangeLog-write:
       type: object
       description: 'An resource representing a log line.'
@@ -3294,43 +3314,40 @@ components:
           type: string
           format: uuid
         action:
-          readOnly: true
           type: string
         objectId:
-          readOnly: true
           type: string
+          nullable: true
         objectClass:
-          readOnly: true
           type: string
         version:
-          readOnly: true
           type: integer
         data:
-          readOnly: true
           type: array
           items:
             type: string
+          nullable: true
         username:
-          readOnly: true
           type: string
+          nullable: true
         session:
-          readOnly: true
           description: 'The moment this request was created'
           type: string
+          nullable: true
         dateCreated:
-          readOnly: true
           description: 'The moment this request was created'
           externalDocs:
             url: 'http://schema.org/DateTime'
           type: string
           format: date-time
+          nullable: true
         dateModified:
-          readOnly: true
           description: 'The moment this request last Modified'
           externalDocs:
             url: 'http://schema.org/DateTime'
           type: string
           format: date-time
+          nullable: true
     'ChangeLog:jsonld-write':
       type: object
       description: 'An resource representing a log line.'
@@ -3361,19 +3378,27 @@ components:
         description:
           description: 'Description of the task'
           type: string
-        owner:
+          nullable: true
+        assignee:
           description: 'a contact component person'
+          externalDocs:
+            url: 'http://schema.org/url'
+          type: string
+          nullable: true
+        topic:
+          description: 'Topic this task relates to'
           externalDocs:
             url: 'http://schema.org/url'
           type: string
         status:
           description: 'The status of this task.'
           type: string
+          nullable: true
         priority:
           description: 'The priority of this task ranging from 1 (high) to 9 (low).'
           type: integer
         percentageDone:
-          description: 'The percentage of a to-do that has been comepleted.'
+          description: 'The percentage of a task that has been comepleted.'
           type: integer
         completed:
           description: 'The date and time a to-do is completed.'
@@ -3381,16 +3406,17 @@ components:
             url: 'http://schema.org/DateTime'
           type: string
           format: date-time
+          nullable: true
         dateCreated:
-          readOnly: true
           description: 'The moment this resource was created'
           type: string
           format: date-time
+          nullable: true
         dateModified:
-          readOnly: true
           description: 'The moment this resource last Modified'
           type: string
           format: date-time
+          nullable: true
       required:
         - name
     Task-write:
@@ -3405,19 +3431,27 @@ components:
         description:
           description: 'Description of the task'
           type: string
-        owner:
+          nullable: true
+        assignee:
           description: 'a contact component person'
+          externalDocs:
+            url: 'http://schema.org/url'
+          type: string
+          nullable: true
+        topic:
+          description: 'Topic this task relates to'
           externalDocs:
             url: 'http://schema.org/url'
           type: string
         status:
           description: 'The status of this task.'
           type: string
+          nullable: true
         priority:
           description: 'The priority of this task ranging from 1 (high) to 9 (low).'
           type: integer
         percentageDone:
-          description: 'The percentage of a to-do that has been comepleted.'
+          description: 'The percentage of a task that has been comepleted.'
           type: integer
         completed:
           description: 'The date and time a to-do is completed.'
@@ -3425,6 +3459,7 @@ components:
             url: 'http://schema.org/DateTime'
           type: string
           format: date-time
+          nullable: true
     'Task:jsonld-read':
       type: object
       description: ''
@@ -3451,19 +3486,27 @@ components:
         description:
           description: 'Description of the task'
           type: string
-        owner:
+          nullable: true
+        assignee:
           description: 'a contact component person'
+          externalDocs:
+            url: 'http://schema.org/url'
+          type: string
+          nullable: true
+        topic:
+          description: 'Topic this task relates to'
           externalDocs:
             url: 'http://schema.org/url'
           type: string
         status:
           description: 'The status of this task.'
           type: string
+          nullable: true
         priority:
           description: 'The priority of this task ranging from 1 (high) to 9 (low).'
           type: integer
         percentageDone:
-          description: 'The percentage of a to-do that has been comepleted.'
+          description: 'The percentage of a task that has been comepleted.'
           type: integer
         completed:
           description: 'The date and time a to-do is completed.'
@@ -3471,16 +3514,17 @@ components:
             url: 'http://schema.org/DateTime'
           type: string
           format: date-time
+          nullable: true
         dateCreated:
-          readOnly: true
           description: 'The moment this resource was created'
           type: string
           format: date-time
+          nullable: true
         dateModified:
-          readOnly: true
           description: 'The moment this resource last Modified'
           type: string
           format: date-time
+          nullable: true
       required:
         - name
     'Task:jsonld-write':
@@ -3504,19 +3548,27 @@ components:
         description:
           description: 'Description of the task'
           type: string
-        owner:
+          nullable: true
+        assignee:
           description: 'a contact component person'
+          externalDocs:
+            url: 'http://schema.org/url'
+          type: string
+          nullable: true
+        topic:
+          description: 'Topic this task relates to'
           externalDocs:
             url: 'http://schema.org/url'
           type: string
         status:
           description: 'The status of this task.'
           type: string
+          nullable: true
         priority:
           description: 'The priority of this task ranging from 1 (high) to 9 (low).'
           type: integer
         percentageDone:
-          description: 'The percentage of a to-do that has been comepleted.'
+          description: 'The percentage of a task that has been comepleted.'
           type: integer
         completed:
           description: 'The date and time a to-do is completed.'
@@ -3524,7 +3576,103 @@ components:
             url: 'http://schema.org/DateTime'
           type: string
           format: date-time
+          nullable: true
 definitions:
+  Task-read:
+    properties:
+      id:
+        description: 'The UUID identifier of this object'
+        type: string
+        example: e2984465-190a-4562-829e-a8cca81aa35d
+        format: uuid
+      name:
+        description: 'Name of the task'
+        type: string
+        example: 'call companies'
+        maxLength: 255
+      description:
+        description: 'Description of the task'
+        type: string
+        example: 'list of companies to call'
+        maxLength: 255
+      assignee:
+        description: 'a contact component person'
+        type: string
+        example: 'https://cc.zaakonline.nl/people/e2984465-190a-4562-829e-a8cca81aa35d'
+        format: url
+      topic:
+        description: 'Topic this task relates to'
+        type: string
+        example: 'https://cc.zaakonline.nl/people/e2984465-190a-4562-829e-a8cca81aa35d'
+        format: url
+      status:
+        description: 'The status of this task.'
+        type: string
+        example: started
+        maxLength: 255
+      priority:
+        description: 'The priority of this task ranging from 1 (high) to 9 (low).'
+        type: int
+        example: '1'
+      percentageDone:
+        description: 'The percentage of a task that has been comepleted.'
+        type: int
+        example: 40%
+      completed:
+        description: 'The date and time a to-do is completed.'
+        type: string
+        example: '2020-05-26 12:13:00'
+        format: date-time
+      dateCreated:
+        description: 'The moment this resource was created'
+        type: \Datetime
+      dateModified:
+        description: 'The moment this resource last Modified'
+        type: \Datetime
+    required:
+      - name
+  Task-write:
+    properties:
+      name:
+        description: 'Name of the task'
+        type: string
+        example: 'call companies'
+        maxLength: 255
+      description:
+        description: 'Description of the task'
+        type: string
+        example: 'list of companies to call'
+        maxLength: 255
+      assignee:
+        description: 'a contact component person'
+        type: string
+        example: 'https://cc.zaakonline.nl/people/e2984465-190a-4562-829e-a8cca81aa35d'
+        format: url
+      topic:
+        description: 'Topic this task relates to'
+        type: string
+        example: 'https://cc.zaakonline.nl/people/e2984465-190a-4562-829e-a8cca81aa35d'
+        format: url
+      status:
+        description: 'The status of this task.'
+        type: string
+        example: started
+        maxLength: 255
+      priority:
+        description: 'The priority of this task ranging from 1 (high) to 9 (low).'
+        type: int
+        example: '1'
+      percentageDone:
+        description: 'The percentage of a task that has been comepleted.'
+        type: int
+        example: 40%
+      completed:
+        description: 'The date and time a to-do is completed.'
+        type: string
+        example: '2020-05-26 12:13:00'
+        format: date-time
+    required:
+      - name
   AuditTrail-read:
     properties:
       id:
@@ -3554,11 +3702,11 @@ definitions:
         maxLength: 255
       subject:
         description: '???'
-        type: \sting
+        type: string
         maxLength: 255
       process:
         description: 'The procces on behalf of wich the request was made'
-        type: \sting
+        type: string
         maxLength: 255
       dataElements:
         description: 'The moment this request was created'
@@ -3568,39 +3716,39 @@ definitions:
         type: array
       resource:
         description: 'The resource that was requested'
-        type: \sting
+        type: string
         maxLength: 255
       resourceType:
         description: 'The type of the resource that was requested'
-        type: \sting
+        type: string
         maxLength: 255
       route:
         description: 'The moment this request was created'
-        type: \sting
+        type: string
         maxLength: 255
       endpoint:
         description: 'The endpoint that the request was made to'
-        type: \sting
+        type: string
         maxLength: 255
       method:
         description: 'The method that was used'
-        type: \sting
+        type: string
         maxLength: 255
       accept:
         description: 'The contentType that was reqousted'
-        type: \sting
+        type: string
         maxLength: 255
       contentType:
         description: 'The contentType that was suplieds'
-        type: \sting
+        type: string
         maxLength: 255
       content:
         description: 'The moment this request was created'
-        type: \sting
+        type: string
         maxLength: 2555
       ip:
         description: 'The moment this request was created'
-        type: \sting
+        type: string
         maxLength: 255
       session:
         description: 'The moment this request was created'
@@ -3629,12 +3777,12 @@ definitions:
         description: 'The moment this request was created'
         type: string
         format: date-time
-        example: '2020-05-04 14:09:30'
+        example: '2020-05-26 12:13:00'
       dateModified:
         description: 'The moment this request last Modified'
         type: string
         format: date-time
-        example: '2020-05-04 14:09:30'
+        example: '2020-05-26 12:13:00'
     required: []
   AuditTrail-write:
     properties:
@@ -3676,18 +3824,18 @@ definitions:
         type: string
       session:
         description: 'The moment this request was created'
-        type: \sting
+        type: string
         maxLength: 255
       dateCreated:
         description: 'The moment this request was created'
         type: string
         format: date-time
-        example: '2020-05-04 14:09:30'
+        example: '2020-05-26 12:13:00'
       dateModified:
         description: 'The moment this request last Modified'
         type: string
         format: date-time
-        example: '2020-05-04 14:09:30'
+        example: '2020-05-26 12:13:00'
     required: []
   ChangeLog-write:
     properties:
@@ -3697,92 +3845,13 @@ definitions:
         example: 'This log line is suspicius'
         maxLength: 2555
     required: []
-  Task-read:
-    properties:
-      id:
-        description: 'The UUID identifier of this object'
-        type: string
-        example: e2984465-190a-4562-829e-a8cca81aa35d
-        format: uuid
-      name:
-        description: 'Name of the task'
-        type: string
-        example: 'call companies'
-        maxLength: 255
-      description:
-        description: 'Description of the task'
-        type: string
-        example: 'list of companies to call'
-        maxLength: 255
-      owner:
-        description: 'a contact component person'
-        type: string
-        example: 'https://cc.zaakonline.nl/people/e2984465-190a-4562-829e-a8cca81aa35d'
-        format: url
-      status:
-        description: 'The status of this task.'
-        type: string
-        example: started
-        maxLength: 255
-      priority:
-        description: 'The priority of this task ranging from 1 (high) to 9 (low).'
-        type: int
-        example: '1'
-      percentageDone:
-        description: 'The percentage of a to-do that has been comepleted.'
-        type: int
-        example: 40%
-      completed:
-        description: 'The date and time a to-do is completed.'
-        type: string
-        example: '2020-05-04 14:09:30'
-        format: date-time
-      dateCreated:
-        description: 'The moment this resource was created'
-        type: \Datetime
-      dateModified:
-        description: 'The moment this resource last Modified'
-        type: \Datetime
-    required:
-      - name
-  Task-write:
-    properties:
-      name:
-        description: 'Name of the task'
-        type: string
-        example: 'call companies'
-        maxLength: 255
-      description:
-        description: 'Description of the task'
-        type: string
-        example: 'list of companies to call'
-        maxLength: 255
-      owner:
-        description: 'a contact component person'
-        type: string
-        example: 'https://cc.zaakonline.nl/people/e2984465-190a-4562-829e-a8cca81aa35d'
-        format: url
-      status:
-        description: 'The status of this task.'
-        type: string
-        example: started
-        maxLength: 255
-      priority:
-        description: 'The priority of this task ranging from 1 (high) to 9 (low).'
-        type: int
-        example: '1'
-      percentageDone:
-        description: 'The percentage of a to-do that has been comepleted.'
-        type: int
-        example: 40%
-      completed:
-        description: 'The date and time a to-do is completed.'
-        type: string
-        example: '2020-05-04 14:09:30'
-        format: date-time
-    required:
-      - name
 tags:
+  -
+    name: Task
+    description: |
+      
+      
+      
   -
     name: AuditTrail
     description: |
@@ -3795,27 +3864,21 @@ tags:
       An resource representing a log line.
       
       This entity represents a product that can be ordered via the OrderRegistratieComponent.
-  -
-    name: Task
-    description: |
-      
-      
-      
 securityDefinitions:
   JWT-Oauth:
     type: oauth2
     authorizationUrl: 'http://petstore.swagger.io/api/oauth/dialog'
     flow: implicit
     scopes:
-      read: 'read right to the Task resource'
-      write: 'write right to the Task resource'
+      read: 'read right to the ChangeLog resource'
+      write: 'write right to the ChangeLog resource'
   JWT-Token:
     type: apiKey
     in: header
     name: Authorization
     scopes:
-      read: 'read right to the Task resource'
-      write: 'write right to the Task resource'
+      read: 'read right to the ChangeLog resource'
+      write: 'write right to the ChangeLog resource'
 host: irc.zaakonline.nl
 servers:
   -
@@ -3833,7 +3896,7 @@ x-commonground:
       url: 'https://github.com/ConductionNL'
       email: info@conduction.nl
     -
-      name: 'Gemeente ''s-Hertogenbosch'
+      name: 'Gemeente "s-Hertogenbosch'
       url: 'https://github.com/gemeenteshertogenbosch'
       email: info@s-hertogenbosch.nl/
     -
