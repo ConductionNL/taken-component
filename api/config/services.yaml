@@ -39,8 +39,8 @@ services:
 #        calls:
 #            -   method: connect
 #                arguments:
-#                    - redis
-#                    - 6379
+#                    - '%env(REDIS_HOST)%'
+#                    - '%env(int:REDIS_PORT)%'
 #            # If you need key prefix, uncomment line belows
 #            # - method: setOption
 #            #   arguments:
