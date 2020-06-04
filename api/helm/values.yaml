@@ -11,7 +11,7 @@ settings:
   id: 
   description: '&#039;Naast deze JSON rest API is er ook een [graphql](/graphql) interface beschikbaar.&#039;'
   type: component
-  repro: https://github.com/ConductionNL/proto-component
+  repro: https://github.com/ConductionNL/taken-component
   demo: tc.zaakonline.nl
   container: https://hub.docker.com/repository/docker/conduction/tc-php
   domain: conduction.nl
