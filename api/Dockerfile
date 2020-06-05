@@ -29,12 +29,8 @@ RUN set -eux; \
 	composer install --prefer-dist --no-dev --no-scripts --no-progress --no-suggest; \
 	composer clear-cache
 
-# do not use .env files in production
-COPY .env ./
-RUN composer dump-env prod; \
-	rm .env
-
 # copy only specifically what we need
+COPY .env ./
 COPY helm helm/
 COPY bin bin/
 COPY config config/
@@ -42,6 +38,7 @@ COPY public public/
 COPY src src/
 COPY templates templates/
 COPY translations translations/
+COPY .env ./
 
 RUN set -eux; \
 	mkdir -p var/cache var/log; \
