@@ -14,7 +14,7 @@ settings:
   repro: https://github.com/ConductionNL/taken-component
   demo: tc.zaakonline.nl
   container: https://hub.docker.com/repository/docker/conduction/tc-php
-  domain: conduction.nl
+  domain: dev
   subdomain: tc
   organisationName: Conduction
   email: info@conduction.nl
