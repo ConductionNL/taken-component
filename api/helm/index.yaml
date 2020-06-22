@@ -3,14 +3,14 @@ entries:
   tc:
   - apiVersion: v1
     appVersion: V.0.1
-    created: "2020-06-05T10:04:21.4177827Z"
+    created: "2020-06-18T08:46:28.48516308Z"
     description: '&#039;Naast deze JSON rest API is er ook een [graphql](/graphql)
       interface beschikbaar.&#039;'
-    digest: e5fb35b0840a454b6a77f10b6221041dab42ea1a36e38fc6b81f901c17cf752f
+    digest: 7fd08504ed39fbf36cf61f7bffc1f830e4757d1ebcc9fe5f3dc44a97420eab8a
     home: tc.zaakonline.nl
     icon: tc.zaakonline.nl
     name: tc
     urls:
     - tc-0.1.0.tgz
     version: 0.1.0
-generated: "2020-06-05T10:04:21.4120388Z"
+generated: "2020-06-18T08:46:28.48171198Z"
