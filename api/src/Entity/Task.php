@@ -129,7 +129,6 @@ class Task
      *
      * @example 10-12-2019 15:00:00
      *
-     * @Assert\DateTime
      * @Groups({"read","write"})
      * @ORM\Column(type="datetime", nullable=true)
      */
