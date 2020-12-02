@@ -7,15 +7,18 @@ settings:
   projectName: tc
   name: tc
   title: Taken Component
-  version: V.0.1
+  version: V1.0
+  majorVersion: v1
   id: 
-  description: 'Naast deze JSON rest API is er ook een [graphql](/graphql) interface beschikbaar.'
+  description: '&#039;Naast deze JSON rest API is er ook een [graphql](/graphql) interface beschikbaar.&#039;'
   type: component
   repro: https://github.com/ConductionNL/taken-component
   demo: tc.zaakonline.nl
   container: https://hub.docker.com/repository/docker/conduction/tc-php
-  domain: dev
+  domain: conduction.nl
   subdomain: tc
+  subpath: tc
+  subpathRouting: true
   organisationName: Conduction
   email: info@conduction.nl
   country: Netherlands
