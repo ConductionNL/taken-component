@@ -1,12 +1,11 @@
 Taken Component / TC
 -------
 
-Het Taken Component biedt de generieke mogelijkheid om taken te registreren van de ene resource op een andere resource (bijvoorbeeld Common Ground resources). Deze functionaliteit is bewust abstract opgezet. In de meest voorkomende vorm zal bijvoorbeeld een medewerker of gebruiker (resource) een taak hebben op een zaak of order (resource), maar in abstracte vorm kan ook een burger (BRP resource) een taak hebben of kunnen zelfs applicaties of processen (zoals opgenomen in het PC) een taak hebben. Het Taken Component geeft in die zin zowel invulling aan taken, als in het agenda calendar concept “todo”, als het bpmn concept “task”. Echter moeten zowel het onderwerp van de taak, als de uitvoerder van de taak identificeerbaar zijn aan de hand van een URL. 
+The Tasks Component offers the generic possibility to register tasks from one resource on another resource (for example Common Ground resources). This functionality is deliberately set up abstract. In the most common form, for example, an employee or user (resource) will have a task on a business or order (resource), but in abstract form a citizen (BRP resource) can also have a task or even applications or processes (as included in the PC) have a task. In this sense, the Tasks Component gives substance to tasks as well as the agenda calendar concept “todo” and the bpmn concept “task”. However, both the subject of the task and the performer of the task must be identifiable by a URL.
 
-Dit betekent dat er automatisch ondersteuning is voor simpele afhandelings-flows, zo zouden taken kunnen worden toegewezen aan een ‘User Group’ en vervolgens kunnen worden opgepakt door een user in die groep.
+This means that there is automatic support for simple fulfillment flows, for example tasks could be assigned to a "User Group" and then picked up by a user in that group.
 
-Memo’s worden in principe gezien als organisatie-intern, en zijn nadrukkelijk geen communicatiekanaal met de klant (daarvoor zijn contactmomenten beschikbaar).
-
+Memos are in principle seen as internal to the organization, and are emphatically not a communication channel with the customer (contact moments are available for this).
 Credits
 -------
 
