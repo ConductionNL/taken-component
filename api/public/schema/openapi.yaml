@@ -12,7 +12,7 @@ info:
     - Docker Image: [online](https://hub.docker.com/repository/docker/conduction/tc-php) 
     - Datamodel: [postman](schema/tc.postman_collection.json) / [oas](schema/openapi.yaml) / [pdf](schema/datamodel.pdf) / [modelio (zip)](schema/Datamodel_Modelio.zip) 
     
-    'Naast deze JSON rest API is er ook een [graphql](/graphql) interface beschikbaar.'         
+    Naast deze JSON rest API is er ook een [graphql](/graphql) interface beschikbaar.         
     
 paths:
   /audit_trails:
@@ -3441,8 +3441,6 @@ components:
           type: integer
         completed:
           description: 'The date and time a to-do is completed.'
-          externalDocs:
-            url: 'http://schema.org/DateTime'
           type: string
           format: date-time
           nullable: true
@@ -3494,8 +3492,6 @@ components:
           type: integer
         completed:
           description: 'The date and time a to-do is completed.'
-          externalDocs:
-            url: 'http://schema.org/DateTime'
           type: string
           format: date-time
           nullable: true
@@ -3549,8 +3545,6 @@ components:
           type: integer
         completed:
           description: 'The date and time a to-do is completed.'
-          externalDocs:
-            url: 'http://schema.org/DateTime'
           type: string
           format: date-time
           nullable: true
@@ -3611,8 +3605,6 @@ components:
           type: integer
         completed:
           description: 'The date and time a to-do is completed.'
-          externalDocs:
-            url: 'http://schema.org/DateTime'
           type: string
           format: date-time
           nullable: true
@@ -3659,9 +3651,8 @@ definitions:
         example: 40%
       completed:
         description: 'The date and time a to-do is completed.'
-        type: string
-        example: '2020-12-02 08:24:55'
-        format: date-time
+        type: \DateTime
+        example: '10-12-2019 15:00:00'
       dateCreated:
         description: 'The moment this resource was created'
         type: \Datetime
@@ -3707,9 +3698,8 @@ definitions:
         example: 40%
       completed:
         description: 'The date and time a to-do is completed.'
-        type: string
-        example: '2020-12-02 08:24:55'
-        format: date-time
+        type: \DateTime
+        example: '10-12-2019 15:00:00'
     required:
       - name
   AuditTrail-read:
@@ -3816,12 +3806,12 @@ definitions:
         description: 'The moment this request was created'
         type: string
         format: date-time
-        example: '2020-12-02 08:24:55'
+        example: '2021-02-17 08:45:21'
       dateModified:
         description: 'The moment this request last Modified'
         type: string
         format: date-time
-        example: '2020-12-02 08:24:55'
+        example: '2021-02-17 08:45:21'
     required: []
   AuditTrail-write:
     properties:
@@ -3869,12 +3859,12 @@ definitions:
         description: 'The moment this request was created'
         type: string
         format: date-time
-        example: '2020-12-02 08:24:55'
+        example: '2021-02-17 08:45:21'
       dateModified:
         description: 'The moment this request last Modified'
         type: string
         format: date-time
-        example: '2020-12-02 08:24:55'
+        example: '2021-02-17 08:45:21'
     required: []
   ChangeLog-write:
     properties:

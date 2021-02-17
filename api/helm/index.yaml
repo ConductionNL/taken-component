@@ -5,7 +5,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 11.10.0
-    created: "2020-12-02T08:34:19.0563172Z"
+    created: "2021-02-17T08:52:07.4687495Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -37,14 +37,14 @@ entries:
   tc:
   - apiVersion: v1
     appVersion: V1.0
-    created: "2020-12-02T08:34:19.0422305Z"
-    description: '&#039;Naast deze JSON rest API is er ook een [graphql](/graphql)
-      interface beschikbaar.&#039;'
-    digest: c66b285c824418e1f15095d52322cb15e310a04f171f86f4b7ad546f6db1c66f
+    created: "2021-02-17T08:52:07.4589754Z"
+    description: Naast deze JSON rest API is er ook een [graphql](/graphql) interface
+      beschikbaar.
+    digest: 18290a57a7315ca7d7d3f930cbd2a6129e4213f5e3704c5bf9eaedd29fb007e8
     home: tc.zaakonline.nl
     icon: tc.zaakonline.nl
     name: tc
     urls:
     - tc-0.1.0.tgz
     version: 0.1.0
-generated: "2020-12-02T08:34:19.0263597Z"
+generated: "2021-02-17T08:52:07.4133413Z"
