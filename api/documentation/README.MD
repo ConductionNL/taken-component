@@ -1,8 +1,8 @@
-# tc
+# taken component
 
 Description
 ----
-Naast deze JSON rest API is er ook een [graphql](/graphql) interface beschikbaar.
+Het taken component
 
 Additional Information
 ----
