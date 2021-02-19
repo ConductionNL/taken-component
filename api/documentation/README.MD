@@ -1,4 +1,4 @@
-# taken component
+# taken-component
 
 Description
 ----

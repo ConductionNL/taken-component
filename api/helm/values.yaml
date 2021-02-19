@@ -11,8 +11,8 @@ settings:
   repro: https://github.com/ConductionNL/taken-component
   demo: tc.zaakonline.nl
   domain: conduction.nl
-  subdomain: tc
-  subpath: tc
+  subdomain: taken-component
+  subpath: taken-component
   subpathRouting: true
   env: dev
   web: false
