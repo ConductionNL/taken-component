@@ -5,7 +5,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 11.10.0
-    created: "2021-02-24T20:28:21.5296396Z"
+    created: "2021-03-01T22:51:54.3319106Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -37,9 +37,9 @@ entries:
   taken-component:
   - apiVersion: v1
     appVersion: V1.0
-    created: "2021-02-24T20:28:21.4958092Z"
+    created: "2021-03-01T22:51:54.3155748Z"
     description: Het taken component
-    digest: 7e77ee4c8319a7dc67f0785a46f10a9db59df06969b6012eb9a03993ee859926
+    digest: 58c52ff3a5cea3948bdd5462fe46dc719380e6c58fd8f7046f276393be216a73
     home: https://www.conduction.nl
     icon: https://conductionnl.github.io/images/conduction_avatar_blue_on_transparant.svg
     keywords:
@@ -59,4 +59,4 @@ entries:
     urls:
     - taken-component-0.1.0.tgz
     version: 0.1.0
-generated: "2021-02-24T20:28:21.4824052Z"
+generated: "2021-03-01T22:51:54.2945069Z"
